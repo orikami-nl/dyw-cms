@@ -2,3 +2,46 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/* Styles for pages */
+
+#pages_list table {
+        border-collapse: collapse;
+}
+
+#pages_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#pages_list .list_description {
+  width:        60%;
+}
+
+#pages_list .list_description dl {
+        margin: 0;
+}
+
+#pages_list .list_description dt {
+  color:        #244;
+  font-weight:  bold;
+  font-size:    larger;
+}
+
+#pages_list .list_description dd {
+        margin: 0;
+}
+
+#pages_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#pages_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#pages_list .list_line_odd {
+  background:   #f8b0f8;
+}

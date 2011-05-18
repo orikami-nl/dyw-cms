@@ -1,26 +1,28 @@
+<div id="pages_list">
+
 <h1>Listing pages</h1>
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Link url</th>
+    <th>Url</th>
     <th>Body</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @pages.each do |page| %>
-  <tr>
+  <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= page.title %></td>
     <td><%= page.link_url %></td>
-    <td><%= page.body %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="list_description"><%= truncate(strip_tags(page.body), :length => 80) %></td>
+    <td class="list_actions"><%= link_to 'Show', page %><br/>
+    	<%= link_to 'Edit', edit_page_path(page) %><br/>
+    	<%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %><br/>
+		</td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
