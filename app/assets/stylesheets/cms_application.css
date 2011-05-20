@@ -1,0 +1,24 @@
+/*
+ * FIXME: Introduce SCSS & Sprockets
+ *= require_self
+ *= require_tree . 
+*/
+p {
+	background-color: #f0f0f0;
+}
+
+#notice {
+        color: #000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
+
+
+h1 {
+        font:  150% sans-serif;
+        color: #226;
+        border-bottom: 3px dotted #77d;
+}
