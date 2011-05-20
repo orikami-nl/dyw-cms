@@ -3,9 +3,6 @@
  *= require_self
  *= require_tree . 
 */
-p {
-	background-color: #f0f0f0;
-}
 
 #notice {
         color: #000;
