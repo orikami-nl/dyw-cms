@@ -21,7 +21,15 @@ module Cms
         format.json { render json: @page }
       end
     end
-  
+    
+    def showbylinkurl
+      @page = Page.find_by_link_url(params[:title])
+      respond_to do |format|
+        format.html { render :show}
+        format.json { render :json => @page }
+      end
+    end
+    
     # GET /pages/new
     # GET /pages/new.json
     def new
