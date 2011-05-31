@@ -24,8 +24,7 @@ module Cms
                            :action         => link.action, 
                            :link_id        => link_id,
                            :page_id        => id }
-  end
-
+   end
 
   end
 end
