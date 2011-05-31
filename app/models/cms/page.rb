@@ -7,13 +7,13 @@ module Cms
 		after_destroy :update_routes
 
 		def update_routes
-			Rails.application.routes.draw do |map|
+			Rails.application.routes.draw do
 				Page.all.each do |page|
-   				match 'cms/pages/:id', :to => 'page#show', :as => page.link_url
+   				match 'cms/pages/:id', :to => 'pages#show', :as => page.link_url
 				end
 				#mount Cms::Engine => "/cms"
 			end
-			Rails.application.routes.reload!	    
+			#Rails.application.routes.reload!	    
 			#ActionController::Routing::Routes.reload!
 		end
   end
