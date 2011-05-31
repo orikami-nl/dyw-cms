@@ -1,5 +1,5 @@
 module Cms
-  class PagesController < ApplicationController
+  class PagesController < Cms::ApplicationController
     # GET /pages
     # GET /pages.json
     def index
