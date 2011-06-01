@@ -3,8 +3,6 @@ source "http://rubygems.org"
 gem 'rails', '3.1.0.beta1'
 gem 'sprockets', '2.0.0.beta.2'
 
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
