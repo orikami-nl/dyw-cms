@@ -1,5 +1,10 @@
 <%= simple_form_for @page do |f| %>
-	<%= f.error_messages %>
+  <ul>
+    <% @page.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
 	<%= f.input :title %>
 	<%= f.input :link_url %>
 	<%= f.input :body %>
