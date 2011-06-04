@@ -7,6 +7,6 @@
 
 	<%= f.input :title %>
 	<%= f.input :link_url %>
-	<%= f.input :body %>
+	<%= f.input :body, :as => :text, :input_html => { :class => 'tinymce' } %>
 	<%= f.button :submit %>
 <% end %>
