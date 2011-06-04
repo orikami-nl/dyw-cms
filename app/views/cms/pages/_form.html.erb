@@ -1,12 +1,28 @@
-<%= simple_form_for @page do |f| %>
-  <ul>
-    <% @page.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<%= form_for @page do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-	<%= f.input :title %>
-	<%= f.input :link_url %>
-	<%= f.input :body, :as => :text, :input_html => { :class => 'tinymce' } %>
-	<%= f.button :submit %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :link_url %><br />
+    <%= f.text_field :link_url %>
+  </div>
+  <div class="tinymce">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
