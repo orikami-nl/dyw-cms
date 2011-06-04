@@ -6,4 +6,3 @@
 //= require <%= options[:javascript] %>_ujs
 <% end -%>
 //= require_tree .
-//= require tiny_mce/tiny_mce.js
