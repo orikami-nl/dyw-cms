@@ -7,7 +7,6 @@ gem 'rake', '~> 0.8.7'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
@@ -20,9 +19,14 @@ if RUBY_VERSION < '1.9'
 end
 
 group :test do
+	gem 'sqlite3'
 	gem "capybara"
 	gem "factory_girl_rails"
 	gem "cucumber-rails"
 	gem "rspec-rails"
 	gem "database_cleaner"
+end
+
+group :development do
+	gem 'sqlite3'
 end
