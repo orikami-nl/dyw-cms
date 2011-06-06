@@ -1,7 +1,10 @@
 source "http://rubygems.org"
 
-gem 'rails', '3.1.0.beta1'
-gem 'sprockets', '2.0.0.beta.2'
+#gem 'rails', '3.1.0.beta1'
+#gem 'sprockets', '2.0.0.beta.2'
+gem 'rails', '3.1.0.rc1'
+gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
+
 gem 'rake', '~> 0.8.7'
 
 # Bundle edge Rails instead:

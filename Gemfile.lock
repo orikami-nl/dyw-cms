@@ -1,35 +1,44 @@
+GIT
+  remote: git://github.com/sstephenson/sprockets.git
+  revision: 4dcb057d47244feb6b3cf28ac7a54efe4f4346c0
+  specs:
+    sprockets (2.0.0.beta.9)
+      hike (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (3.1.0.beta1)
-      actionpack (= 3.1.0.beta1)
+    actionmailer (3.1.0.rc1)
+      actionpack (= 3.1.0.rc1)
       mail (~> 2.3.0)
-    actionpack (3.1.0.beta1)
-      activemodel (= 3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
+    actionpack (3.1.0.rc1)
+      activemodel (= 3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       i18n (~> 0.6.0beta1)
-      rack (~> 1.3.0.beta)
+      rack (~> 1.3.0.beta2)
       rack-cache (~> 1.0.1)
-      rack-mount (~> 0.7.2)
+      rack-mount (~> 0.8.1)
       rack-test (~> 0.6.0)
-      sprockets (~> 2.0.0.beta.2)
+      sprockets (~> 2.0.0.beta.5)
       tzinfo (~> 0.3.27)
-    activemodel (3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
+    activemodel (3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
       bcrypt-ruby (~> 2.1.4)
       builder (~> 3.0.0)
       i18n (~> 0.6.0beta1)
-    activerecord (3.1.0.beta1)
-      activemodel (= 3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
-      arel (~> 2.1.0)
+    activerecord (3.1.0.rc1)
+      activemodel (= 3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
+      arel (~> 2.1.1)
       tzinfo (~> 0.3.27)
-    activeresource (3.1.0.beta1)
-      activemodel (= 3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
-    activesupport (3.1.0.beta1)
+    activeresource (3.1.0.rc1)
+      activemodel (= 3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
+    activesupport (3.1.0.rc1)
       multi_json (~> 1.0)
     arel (2.1.1)
     bcrypt-ruby (2.1.4)
@@ -88,23 +97,23 @@ GEM
     rack (1.3.0)
     rack-cache (1.0.2)
       rack (>= 0.4)
-    rack-mount (0.7.4)
+    rack-mount (0.8.1)
       rack (>= 1.0.0)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.0)
       rack (>= 1.0)
-    rails (3.1.0.beta1)
-      actionmailer (= 3.1.0.beta1)
-      actionpack (= 3.1.0.beta1)
-      activerecord (= 3.1.0.beta1)
-      activeresource (= 3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
+    rails (3.1.0.rc1)
+      actionmailer (= 3.1.0.rc1)
+      actionpack (= 3.1.0.rc1)
+      activerecord (= 3.1.0.rc1)
+      activeresource (= 3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
       bundler (~> 1.0)
-      railties (= 3.1.0.beta1)
-    railties (3.1.0.beta1)
-      actionpack (= 3.1.0.beta1)
-      activesupport (= 3.1.0.beta1)
+      railties (= 3.1.0.rc1)
+    railties (3.1.0.rc1)
+      actionpack (= 3.1.0.rc1)
+      activesupport (= 3.1.0.rc1)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       thor (~> 0.14.6)
@@ -130,13 +139,10 @@ GEM
       json_pure
       rubyzip
     simple_form (1.4.0)
-    sprockets (2.0.0.beta.2)
-      hike (~> 1.0)
-      rack (~> 1.0)
-      tilt (~> 1.0)
     sqlite3 (1.3.3)
     term-ansicolor (1.0.5)
     therubyracer (0.8.2)
+    therubyracer-heroku (0.8.1.pre3)
     thor (0.14.6)
     tilt (1.3.2)
     treetop (1.4.9)
@@ -158,12 +164,13 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   jquery-rails
-  rails (= 3.1.0.beta1)
+  rails (= 3.1.0.rc1)
   rake (~> 0.8.7)
   rspec-rails
   sass
   simple_form
-  sprockets (= 2.0.0.beta.2)
+  sprockets!
   sqlite3
   therubyracer
+  therubyracer-heroku
   uglifier
