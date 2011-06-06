@@ -11,7 +11,8 @@ gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
-gem 'therubyracer'
+gem 'therubyracer-heroku'
+
 gem 'simple_form'
 
 if RUBY_VERSION < '1.9'
@@ -19,6 +20,7 @@ if RUBY_VERSION < '1.9'
 end
 
 group :test do
+	gem 'therubyracer'
 	gem 'sqlite3'
 	gem "capybara"
 	gem "factory_girl_rails"
@@ -28,5 +30,6 @@ group :test do
 end
 
 group :development do
+	gem 'therubyracer'
 	gem 'sqlite3'
 end
