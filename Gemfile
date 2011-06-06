@@ -11,6 +11,7 @@ gem 'rake', '~> 0.8.7'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sass'
+gem 'json'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
