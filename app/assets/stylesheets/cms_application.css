@@ -14,13 +14,20 @@ body {
   font-family: sans-serif;  
 }
 
+.cms_border {
+	border-style: solid;
+	border-color: #CCCCCC;
+	border-width: 1px;
+	margin: 5px;
+	padding: 5px;
+}
+
 /* flash-messages */
 .flash .message {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   text-align:center;
   margin: 0 auto 15px;
-
 }
 
 .flash .message p {

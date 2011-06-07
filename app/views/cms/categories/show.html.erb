@@ -1,5 +1,5 @@
-<div>
-<h1>The body of the <%= @category.title %> category will look like:</h1>
+<div class="cms_border">
+<h1>The body of the <%= @category.title %> main page will look like:</h1>
 
 <%= raw(@category.body) %>
 <p>
@@ -7,9 +7,9 @@
 </p>
 </div>
 
-<div id="pages_list">
+<div id="pages_list", class="cms_border">
 
-<h1>The following pages are present within the <%= @category.title %> category:</h1>
+<h1>The following sub-pages are present within the <%= @category.title %> main page:</h1>
 <table>
   <tr>
     <th>Page title</th>
@@ -30,14 +30,11 @@
   </tr>
 <% end %>
 </table>
+<br>
+<%= link_to 'New Page', new_category_page_path(@category) %>
 </div>
-
-<br />
-
-<p>
-	<%= link_to 'New Page', new_category_page_path(@category) %> |
-	<%= link_to 'Back', categories_path %>
-</p>
+<br>
+<%= link_to 'Back', categories_path %>
 
 
 

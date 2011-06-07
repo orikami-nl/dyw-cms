@@ -1,6 +1,5 @@
-<h1>Editing page</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', category_page_path(@page) %> |
+<div class="cms_border">
+	<h1>Editing the <%= @page.title %> sub-page</h1>
+	<%= render 'form' %>
+</div>
 <%= link_to 'Back', category_path(@category) %>
