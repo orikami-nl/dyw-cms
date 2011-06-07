@@ -10,26 +10,32 @@
 <div id="pages_list", class="cms_border">
 
 <h1>The following sub-pages are present within the <%= @category.title %> main page:</h1>
-<table>
-  <tr>
-    <th>Page title</th>
-    <th>Name for url</th>
-    <th>Body</th>
-    <th></th>
-  </tr>
+<% if @pages.count.zero? %>
+	<p>
+		No sub-pages are present. You may create one by clicking the link.
+	</p>
+<% else %>
+	<table>
+ 		<tr>
+  	  <th>Page title</th>
+  	  <th>Name for url</th>
+  	  <th>Body</th>
+  	  <th></th>
+  	</tr>
 
-<% @pages.each do |page| %>
-  <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td><%= page.title %></td>
-    <td><%= page.link_name %></td>
-    <td class="list_description"><%= truncate(strip_tags(page.body), :length => 70) %></td>
-    <td class="list_actions"><%= link_to 'Show', category_page_path(@category, page) %><br/>
-    	<%= link_to 'Edit', edit_category_page_path(@category, page) %><br/>
-    	<%= link_to 'Destroy', category_page_path(@category, page), confirm: 'Are you sure?', method: :delete %><br/>
-		</td>
-  </tr>
+	<% @pages.each do |page| %>
+  	<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
+  	  <td><%= page.title %></td>
+  	  <td><%= page.link_name %></td>
+  	  <td class="list_description"><%= truncate(strip_tags(page.body), :length => 70) %></td>
+  	  <td class="list_actions"><%= link_to 'Show', category_page_path(@category, page) %><br/>
+  	  	<%= link_to 'Edit', edit_category_page_path(@category, page) %><br/>
+  	  	<%= link_to 'Destroy', category_page_path(@category, page), confirm: 'Are you sure?', method: :delete %><br/>
+			</td>
+  	</tr>
+	<% end %>
+	</table>
 <% end %>
-</table>
 <br>
 <%= link_to 'New Page', new_category_page_path(@category) %>
 </div>
