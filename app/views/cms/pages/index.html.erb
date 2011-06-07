@@ -13,7 +13,7 @@
 <% @pages.each do |page| %>
   <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= page.title %></td>
-    <td><%= page.link_url %></td>
+    <td><%= page.link_name %></td>
     <td class="list_description"><%= truncate(strip_tags(page.body), :length => 70) %></td>
     <td class="list_actions"><%= link_to 'Show', page %><br/>
     	<%= link_to 'Edit', edit_page_path(page) %><br/>
