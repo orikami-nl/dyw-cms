@@ -4,8 +4,8 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Url</th>
+    <th>Page title</th>
+    <th>Name for url</th>
     <th>Body</th>
     <th></th>
   </tr>
@@ -15,9 +15,9 @@
     <td><%= page.title %></td>
     <td><%= page.link_name %></td>
     <td class="list_description"><%= truncate(strip_tags(page.body), :length => 70) %></td>
-    <td class="list_actions"><%= link_to 'Show', page %><br/>
-    	<%= link_to 'Edit', edit_page_path(page) %><br/>
-    	<%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %><br/>
+    <td class="list_actions"><%= link_to 'Show', category_page_path(@category, page) %><br/>
+    	<%= link_to 'Edit', edit_category_page_path(@category, page) %><br/>
+    	<%= link_to 'Destroy', category_page_path(@category, page), confirm: 'Are you sure?', method: :delete %><br/>
 		</td>
   </tr>
 <% end %>
@@ -26,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Page', new_page_path %>
+<%= link_to 'New Page', new_category_page_path(@category) %>

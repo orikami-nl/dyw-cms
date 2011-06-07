@@ -1,23 +1,24 @@
+<div id="categories_list">
+
 <h1>Listing categories</h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Link name</th>
+    <th>Category title</th>
+    <th>Name for url</th>
     <th>Body</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @categories.each do |category| %>
-  <tr>
+  <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= category.title %></td>
     <td><%= category.link_name %></td>
-    <td><%= category.body %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="list_description"><%= truncate(strip_tags(category.body), :length => 70) %></td>
+    <td class="list_actions"><%= link_to 'Show', category_path(category) %><br/>
+    	<%= link_to 'Edit', edit_category_path(category) %><br/>
+    	<%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %><br/>
+		</td>
   </tr>
 <% end %>
 </table>
@@ -25,3 +26,5 @@
 <br />
 
 <%= link_to 'New Category', new_category_path %>
+
+</div>

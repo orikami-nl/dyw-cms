@@ -1,6 +1,8 @@
 Cms::Engine.routes.draw do
-  resources :categories
 
-  resources :pages
-  root :to => 'pages#index'
+  resources :categories do
+	  resources :pages
+	end
+
+  root :to => 'categories#index'
 end

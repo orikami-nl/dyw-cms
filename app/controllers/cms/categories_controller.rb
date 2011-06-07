@@ -15,7 +15,8 @@ module Cms
     # GET /categories/1.json
     def show
       @category = Category.find(params[:id])
-  
+  		@pages = @category.pages.all
+
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @category }
