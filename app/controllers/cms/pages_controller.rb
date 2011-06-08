@@ -32,7 +32,7 @@ module Cms
     
     # GET /pages/new
     # GET /pages/new.json
-    def new
+    def
       @page = Page.new
   
       respond_to do |format|
