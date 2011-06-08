@@ -8,7 +8,7 @@ class NavigationController < ApplicationController
 	end
 
   def show_page
-    @page = Cms::Page.find(params[:page_title])
+    @page = Cms::Page.find_by_link_name(params[:page_title])
 		@pages = @category.pages.all
     respond_to do |format|
       format.html { render :show_page}
