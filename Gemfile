@@ -16,6 +16,7 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'therubyracer-heroku'
+gem 'carrierwave'
 
 gem 'simple_form'
 
