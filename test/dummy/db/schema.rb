@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110607113520) do
+ActiveRecord::Schema.define(:version => 20110608092742) do
 
   create_table "cms_categories", :force => true do |t|
-    t.string   "title"
+    t.string   "category_title"
     t.string   "link_name"
     t.text     "body"
     t.datetime "created_at"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20110607113520) do
   end
 
   create_table "cms_pages", :force => true do |t|
-    t.string   "title"
+    t.string   "page_title"
     t.string   "link_name"
     t.text     "body"
     t.datetime "created_at"

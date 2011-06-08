@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   mount Cms::Engine => "/cms"
 
-	match '/:title', :to => 'navigation#show'
+	match '/:page_title', :to => 'navigation#show_page'
 
 end

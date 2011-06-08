@@ -30,7 +30,7 @@ module Cms
     end
     
     def showbylinkname
-      @page = Category.pages.find_by_link_name(params[:title])
+      @page = Category.pages.find_by_link_name(params[:page_title])
       respond_to do |format|
         format.html { render :show}
         format.json { render :json => @page }

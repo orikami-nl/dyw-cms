@@ -1,5 +1,5 @@
 <div class="cms_border">
-<h1>The body of the <%= @category.title %> main page will look like:</h1>
+<h1>The body of the <%= @category.category_title %> main page will look like:</h1>
 
 <%= raw(@category.body) %>
 <p>
@@ -9,7 +9,7 @@
 
 <div id="pages_list", class="cms_border">
 
-<h1>The following sub-pages are present within the <%= @category.title %> main page:</h1>
+<h1>The following sub-pages are present within the <%= @category.category_title %> main page:</h1>
 <% if @pages.count.zero? %>
 	<p>
 		No sub-pages are present. You may create one by clicking the link.
@@ -25,7 +25,7 @@
 
 	<% @pages.each do |page| %>
   	<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
-  	  <td><%= page.title %></td>
+  	  <td><%= page.page_title %></td>
   	  <td><%= page.link_name %></td>
   	  <td class="list_description"><%= truncate(strip_tags(page.body), :length => 70) %></td>
   	  <td class="list_actions"><%= link_to 'Show', category_page_path(@category, page) %><br/>

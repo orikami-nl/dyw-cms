@@ -17,7 +17,7 @@
 
 	<% @categories.each do |category| %>
   	<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
-  	  <td><%= category.title %></td>
+  	  <td><%= category.category_title %></td>
   	  <td><%= category.link_name %></td>
   	  <td class="list_description"><%= truncate(strip_tags(category.body), :length => 70) %></td>
   	  <td class="list_actions"><%= link_to 'Show', category_path(category) %><br/>
