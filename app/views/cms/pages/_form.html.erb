@@ -1,8 +1,9 @@
-<%= form_for(@page) do |f| %>
+<% use_tinymce -%>
+
+<%= form_for([@category, @page]) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
-
       <ul>
       <% @page.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,16 +13,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :page_title %><br />
+    <%= f.text_field :page_title %>
   </div>
   <div class="field">
-    <%= f.label :link_url %><br />
-    <%= f.text_field :link_url %>
+    <%= f.label :link_name %><br />
+    <%= f.text_field :link_name %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => "mce-editor" %>
   </div>
   <div class="actions">
     <%= f.submit %>

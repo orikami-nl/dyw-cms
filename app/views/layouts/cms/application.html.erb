@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cms Engine</title>
+  <title>Content Management System</title>
+	<%= yield :tinymce %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+	<%= yield :tinymce_init %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-		<% flash.each do |key, value| %>
-			<div id ="notice">
-				<%= content_tag(:div, value, :class => "flash #{key}") %>
-			</div>
-		<% end %>
+  <div class="flash">
+    <% flash.each do |type, message| -%>
+      <div class="message <%= type %>">
+        <p><%= message %></p>
+      </div>
+    <% end -%>
+  </div>
 
 	<%= yield %>
 

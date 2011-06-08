@@ -1,0 +1,35 @@
+<div id="categories_list" class="cms_border">
+
+<h1>The following main-pages are present on your site:</h1>
+
+<% if @categories.count.zero? %>
+	<p>
+		No main pages are present. You may create one by clicking the link.
+	</p>
+<% else %>
+	<table>
+  	<tr>
+  	  <th>Category title</th>
+  	  <th>Name for url</th>
+  	  <th>Body</th>
+  	  <th></th>
+  	</tr>
+
+	<% @categories.each do |category| %>
+  	<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
+  	  <td><%= category.category_title %></td>
+  	  <td><%= category.link_name %></td>
+  	  <td class="list_description"><%= truncate(strip_tags(category.body), :length => 70) %></td>
+  	  <td class="list_actions"><%= link_to 'Show', category_path(category) %><br/>
+  	  	<%= link_to 'Edit', edit_category_path(category) %><br/>
+  	  	<%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %><br/>
+			</td>
+  	</tr>
+	<% end %>
+	</table>
+<% end %>
+<br>
+
+<%= link_to 'New Category', new_category_path %>
+
+</div>

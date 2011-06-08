@@ -1,9 +1,16 @@
 module Cms
   class PagesController < Cms::ApplicationController
+
+		before_filter :get_category
+
+		def get_category
+			@category = Category.find(params[:category_id])
+		end
+
     # GET /pages
     # GET /pages.json
     def index
-      @pages = Page.all
+      @pages = @category.pages.all
   
       respond_to do |format|
         format.html # index.html.erb
@@ -14,7 +21,7 @@ module Cms
     # GET /pages/1
     # GET /pages/1.json
     def show
-      @page = Page.find(params[:id])
+      @page = @category.pages.find(params[:id])
   
       respond_to do |format|
         format.html # show.html.erb
@@ -22,8 +29,8 @@ module Cms
       end
     end
     
-    def showbylinkurl
-      @page = Page.find_by_link_url(params[:title])
+    def showbylinkname
+      @page = Category.pages.find_by_link_name(params[:page_title])
       respond_to do |format|
         format.html { render :show}
         format.json { render :json => @page }
@@ -32,9 +39,8 @@ module Cms
     
     # GET /pages/new
     # GET /pages/new.json
-    def
-      @page = Page.new
-  
+    def new
+      @page = @category.pages.new
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @page }
@@ -49,11 +55,11 @@ module Cms
     # POST /pages
     # POST /pages.json
     def create
-      @page = Page.new(params[:page])
+      @page = @category.pages.create(params[:page])
   
       respond_to do |format|
         if @page.save
-          format.html { redirect_to @page, notice: 'Page was successfully created.' }
+          format.html { redirect_to category_path(@category), notice: 'Page was successfully created.' }
           format.json { render json: @page, status: :created, location: @page }
         else
           format.html { render action: "new" }
@@ -69,7 +75,7 @@ module Cms
   
       respond_to do |format|
         if @page.update_attributes(params[:page])
-          format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+          format.html { redirect_to category_path(@category), notice: 'Page was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
@@ -85,7 +91,7 @@ module Cms
       @page.destroy
   
       respond_to do |format|
-        format.html { redirect_to pages_url }
+        format.html { redirect_to category_path(@category) }
         format.json { head :ok }
       end
     end
