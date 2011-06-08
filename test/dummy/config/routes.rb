@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get "navigation/show"
+  get "navigation/show_page"
+	get "navigation/show_category"
 
   mount Cms::Engine => "/cms"
 
