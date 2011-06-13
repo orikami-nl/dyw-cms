@@ -3,7 +3,7 @@ tinyMCE.init({
 	mode : "specific_textareas",
 	editor_selector : "mce-editor",
 	theme : "advanced",
-  theme_advanced_buttons1 : "undo,redo,|, bold,italic,underline,separator,fontselect, fontsizeselect, forecolor, backcolor, link, |, image",
+  theme_advanced_buttons1 : "undo,redo,|, bold,italic,underline,separator,fontselect, fontsizeselect, forecolor, backcolor, link",
 	theme_advanced_buttons2 : "",
 	theme_advanced_buttons3 : "",
   theme_advanced_toolbar_location : "top",
