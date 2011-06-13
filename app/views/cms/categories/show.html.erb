@@ -35,10 +35,10 @@
 			</td>
 			<td class="list_actions">
 				<% if page.previous_page(@category) %>
-					<%= link_to('Move Up', :controller => 'pages', :action => 'move_page_up', :id => page) %>
+					<%= link_to('Move Up', :controller => 'pages', :action => 'move_page_up', :id => page, :category_id => @category.id) %>
 				 	<br/>
 				<% end %>
-				<%= link_to('Move Down', :controller => 'pages', :action => 'move_page_down', :id => page) if page.next_page(@category) %>
+				<%= link_to('Move Down', :controller => 'pages', :action => 'move_page_down', :id => page, :category_id => @category.id) if page.next_page(@category) %>
 			</td>
   	</tr>
 	<% end %>
