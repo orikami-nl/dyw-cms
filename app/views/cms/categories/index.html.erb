@@ -13,6 +13,7 @@
   	  <th>Name for url</th>
   	  <th>Body</th>
   	  <th></th>
+			<th></th>
   	</tr>
 
 	<% @categories.each do |category| %>
@@ -23,6 +24,13 @@
   	  <td class="list_actions"><%= link_to 'Show', category_path(category) %><br/>
   	  	<%= link_to 'Edit', edit_category_path(category) %><br/>
   	  	<%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %><br/>
+			</td>
+			<td class="list_actions">
+				<% if category.previous_category %>
+					<%= link_to('Move Up', :controller => 'categories', :action => 'move_category_up', :id => category) %>
+				 	<br/>
+				<% end %>
+				<%= link_to('Move Down', :controller => 'categories', :action => 'move_category_down', :id => category) if category.next_category %>
 			</td>
   	</tr>
 	<% end %>

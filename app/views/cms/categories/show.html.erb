@@ -21,6 +21,7 @@
   	  <th>Name for url</th>
   	  <th>Body</th>
   	  <th></th>
+			<th></th>
   	</tr>
 
 	<% @pages.each do |page| %>
@@ -31,6 +32,13 @@
   	  <td class="list_actions"><%= link_to 'Show', category_page_path(@category, page) %><br/>
   	  	<%= link_to 'Edit', edit_category_page_path(@category, page) %><br/>
   	  	<%= link_to 'Destroy', category_page_path(@category, page), confirm: 'Are you sure?', method: :delete %><br/>
+			</td>
+			<td class="list_actions">
+				<% if page.previous_page(@category) %>
+					<%= link_to('Move Up', :controller => 'pages', :action => 'move_page_up', :id => page) %>
+				 	<br/>
+				<% end %>
+				<%= link_to('Move Down', :controller => 'pages', :action => 'move_page_down', :id => page) if page.next_page(@category) %>
 			</td>
   	</tr>
 	<% end %>

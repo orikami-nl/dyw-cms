@@ -7,10 +7,32 @@ module Cms
 			@category = Category.find(params[:category_id])
 		end
 
+		def move_page_up
+			current_page = @category.pages.find(params[:id])
+			upper_page = current_page.previous_page(@category)
+			current_position = current_page.position
+			upper_position = upper_page.position
+			upper_page.update_attributes(:position => 'foo')			
+			current_page.update_attributes(:position => upper_position)
+			upper_page.update_attributes(:position => current_position)			
+			redirect_to category_path(@category)
+		end
+
+		def move_page_down
+			current_page = @category.pages.find(params[:id])
+			lower_page = current_page.next_page(@category)
+			current_position = current_page.position
+			lower_position = lower_page.position
+			lower_page.update_attributes(:position => 'foo')			
+			current_page.update_attributes(:position => lower_position)
+			lower_page.update_attributes(:position => current_position)			
+			redirect_to category_path(@category)
+		end
+
     # GET /pages
     # GET /pages.json
     def index
-      @pages = @category.pages.all
+      @pages = @category.pages.find(:all, :order => 'position')
   
       respond_to do |format|
         format.html # index.html.erb

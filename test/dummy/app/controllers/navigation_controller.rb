@@ -3,7 +3,6 @@ class NavigationController < ApplicationController
 	before_filter :get_category
 
 	def get_category
-		#@category = Cms::Category.find_by_link_name(params[:category_title])
 		@category = Cms::Category.find_by_link_name(params[:category_title])
 	end
 

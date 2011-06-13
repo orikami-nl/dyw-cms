@@ -1,9 +1,31 @@
 module Cms
   class CategoriesController < ApplicationController
+		def move_category_up
+			current_category = Category.find(params[:id])
+			upper_category = current_category.previous_category
+			current_position = current_category.position
+			upper_position = upper_category.position
+			upper_category.update_attributes(:position => 'foo')			
+			current_category.update_attributes(:position => upper_position)
+			upper_category.update_attributes(:position => current_position)			
+			redirect_to root_path
+		end
+
+		def move_category_down
+			current_category = Category.find(params[:id])
+			lower_category = current_category.next_category
+			current_position = current_category.position
+			lower_position = lower_category.position
+			lower_category.update_attributes(:position => 'foo')			
+			current_category.update_attributes(:position => lower_position)
+			lower_category.update_attributes(:position => current_position)			
+			redirect_to root_path
+		end
+
     # GET /categories
     # GET /categories.json
     def index
-      @categories = Category.all
+      @categories = Category.find(:all, :order => 'position')
   
       respond_to do |format|
         format.html # index.html.erb
@@ -15,7 +37,7 @@ module Cms
     # GET /categories/1.json
     def show
       @category = Category.find(params[:id])
-  		@pages = @category.pages.all
+  		@pages = @category.pages.find(:all, :order => 'position')
 
       respond_to do |format|
         format.html # show.html.erb
