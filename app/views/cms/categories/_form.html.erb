@@ -1,5 +1,3 @@
-<% use_tinymce -%>
-
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body, :class => "mce-editor" %>
+    <%= f.text_area :body %>
   </div>
   <div class="actions">
     <%= f.submit %>
