@@ -4,7 +4,13 @@
   <title>Content Management System</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<!-- CLEditor script-->  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#input").cleditor();
+    });
+  </script>  
+	<%= csrf_meta_tags %>
 </head>
 <body>
   <div class="flash">

@@ -6,3 +6,4 @@
 //= require <%= options[:javascript] %>_ujs
 <% end -%>
 //= require_tree .
+
