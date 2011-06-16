@@ -1,6 +1,6 @@
 <div class="cms_border">
 <h1>The body of the <%= @page.page_title %> sub-page will look like:</h1>
-<%= @page.body %>
+<%= raw(@page.body) %>
 <p>
 	<%= link_to 'Edit', edit_category_page_path(@category, @page) %>
 </p>

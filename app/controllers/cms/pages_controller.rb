@@ -94,9 +94,9 @@ module Cms
     # PUT /pages/1.json
     def update
       @page = Page.find(params[:id])
-  
+			  
       respond_to do |format|
-        if @page.update_attributes(params[:page])
+        if @page.update_attributes!(params[:page])
           format.html { redirect_to category_path(@category), notice: 'Page was successfully updated.' }
           format.json { head :ok }
         else
