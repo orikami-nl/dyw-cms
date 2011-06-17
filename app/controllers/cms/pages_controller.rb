@@ -77,7 +77,15 @@ module Cms
     # POST /pages
     # POST /pages.json
     def create
+			last_page = @category.pages.find(:all, :order => 'position').last
+			if last_page.nil?
+				last_position = 0
+			else
+				last_position = last_page.position.to_i
+			end
+
       @page = @category.pages.create(params[:page])
+			@page.position = last_position + 1
   
       respond_to do |format|
         if @page.save

@@ -64,7 +64,15 @@ module Cms
     # POST /categories
     # POST /categories.json
     def create
+			last_category = Category.find(:all, :order => 'position').last
+			if last_category.nil?
+				last_position = 0
+			else
+				last_position = last_category.position.to_i
+			end
+
       @category = Category.new(params[:category])
+			@category.position = last_position + 1
   
       respond_to do |format|
         if @category.save
