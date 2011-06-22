@@ -4,16 +4,23 @@ end
 
 Given /^I (only )?have pages titled "?([^\"]*)"?$/ do |only, titles|
   Cms::Page.delete_all if only
+	position = 1
   titles.split(', ').each do |title|
-    Cms::Page.create(:title => title, :link_url => "/" + title)
+    @only_category.pages.create(:page_title => title, :link_name => title.downcase, :position => position)
+		position = position + 1
   end
 end
 
 Given /^I (only )?have a page titled "?([^\"]*)"?$/ do |only, title|
   Cms::Page.delete_all if only
-  Cms::Page.create(:title => title, :link_url => "/" + title)
+  @only_category.pages.create(:page_title => title, :link_name => title.downcase)
 end
 
 Then /^I should have ([0-9]+) pages?$/ do |count|
-  Cms::Page.count.should == count.to_i
+  @only_category.pages.count.should == count.to_i
+end
+
+Then /^I should see the page "([^"]*)" before the page "([^"]*)"$/ do |first, second|
+  @only_category.pages.find_by_page_title(first).position.should == 1
+  @only_category.pages.find_by_page_title(second).position.should == 2
 end

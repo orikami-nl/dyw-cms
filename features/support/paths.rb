@@ -10,8 +10,12 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+		when /the list of categories/
+			'/cms'
 		when /the list of pages/
-			'/cms/pages'
+			'/cms/categories/' + @only_category.position.to_s
+		when /the pickles page/
+			'/pickles'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
