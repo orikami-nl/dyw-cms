@@ -11,18 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :page_title %><br />
+    <%= f.label "Page title" %><br />
     <%= f.text_field :page_title %>
   </div>
   <div class="field">
-    <%= f.label :link_name %><br />
-    <%= f.text_field :link_name %>
+    <%= f.label "Name for link appendage" %><br />
+    <%= f.text_field :link_name %><br />
+		<%= f.label "Hint: No slashes, just one unique word that is appended to the url and references the page" %> 
   </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body, :class => "input" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create"%>
   </div>
 <% end %>
