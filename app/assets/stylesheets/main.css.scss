@@ -1,12 +1,12 @@
+#cms_body {
+
+font-size: 12px;
+font-family: sans-serif;  
+
 h1 { margin: 15px 0; font-size: 22px; font-weight: normal; }
 h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
 h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
 h4 { font-size: 16px; margin: 10px 0; font-weight: normal;}
-
-body {
-  font-size: 12px;
-  font-family: sans-serif;  
-}
 
 .cms_border {
 	border-style: solid;
@@ -43,4 +43,6 @@ body {
 .flash .alert {
   border: 1px solid #fbb;
   background-color: #fdd;
+}
+
 }
