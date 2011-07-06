@@ -1,24 +1,18 @@
-/* 
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-  You can use Sass (SCSS) here: http://sass-lang.com/
-*/
-
 #categories_list table {
-        border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 #categories_list table tr td {
-        padding: 5px;
-        vertical-align: top;
+	padding: 5px;
+	vertical-align: top;
 }
 
 #categories_list .list_description {
-  width:        60%;
+  width:60%;
 }
 
 #categories_list .list_description dl {
-        margin: 0;
+	margin: 0;
 }
 
 #categories_list .list_description dt {
@@ -28,7 +22,7 @@
 }
 
 #categories_list .list_description dd {
-        margin: 0;
+	margin: 0;
 }
 
 #categories_list .list_actions {
@@ -38,11 +32,11 @@
 }
 
 #categories_list .list_line_even {
-  background:   #FFFFFF;
+  background:#FFFFFF;
 }
 
 #categories_list .list_line_odd {
-  background:   #FF9999;
+  background:#FF9999;
 }
 /* Simple form styles */
 
