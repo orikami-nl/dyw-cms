@@ -2,4 +2,9 @@
 	<h1>Editing the <%= @page.page_title %> sub-page</h1>
 	<%= render 'form' %>
 </div>
+<div class="cms_asset_list">
+    <h2>Hier zie je een lijst met geuploade files. Om naar deze files te verwijzen dien je een link te maken die verwijst naar deze file e.g. http://www.vv-fr.nl/uploads/cms/asset/file/6/file.pdf</h2>
+  <%= render 'assets/assets_list' %>
+</div>
+
 <%= link_to 'Back', category_path(@category) %>

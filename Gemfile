@@ -1,5 +1,10 @@
 source "http://rubygems.org"
 
+group :development do
+  gem 'simple_form'
+  gem 'carrierwave'
+end
+
 if RUBY_VERSION < '1.9'
   gem "ruby-debug", ">= 0.10.3"
 end

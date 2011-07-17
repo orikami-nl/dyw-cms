@@ -1,5 +1,6 @@
 Cms::Engine.routes.draw do
 
+  resources :assets
   resources :categories do
 	  resources :pages
 	end

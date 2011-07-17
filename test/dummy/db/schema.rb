@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613091041) do
+ActiveRecord::Schema.define(:version => 20110717132649) do
+
+  create_table "cms_assets", :force => true do |t|
+    t.string   "name"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cms_categories", :force => true do |t|
     t.string   "category_title"
@@ -29,12 +36,6 @@ ActiveRecord::Schema.define(:version => 20110613091041) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "position"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "login"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
