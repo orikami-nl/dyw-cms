@@ -1,5 +1,4 @@
 Cms::Engine.routes.draw do
-
   resources :files, except: :show
   resources :categories do
 	  resources :pages
