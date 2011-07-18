@@ -5,4 +5,5 @@ pkg/
 test/dummy/db/*.sqlite3
 test/dummy/log/*.log
 test/dummy/tmp/
+test/dummy/public/uploads/
 .redcar

@@ -1,5 +1,5 @@
 module Cms
-  class Asset < ActiveRecord::Base
+  class File < ActiveRecord::Base
     mount_uploader :file, AssetUploader
   end
 end

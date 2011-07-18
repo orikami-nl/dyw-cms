@@ -1,6 +1,6 @@
 Cms::Engine.routes.draw do
 
-  resources :assets, except: :show, :path => 'files'
+  resources :files, except: :show
   resources :categories do
 	  resources :pages
 	end

@@ -1,6 +1,6 @@
-class CreateCmsAssets < ActiveRecord::Migration
+class CreateCmsFiles < ActiveRecord::Migration
   def change
-    create_table :cms_assets do |t|
+    create_table :cms_files do |t|
       t.string :name
       t.string :file
 

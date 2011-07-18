@@ -1,18 +1,18 @@
 module Cms
-  class AssetsController < Cms::ApplicationController
+  class FilesController < Cms::ApplicationController
     def index
-      @assets = Asset.all
+      @assets = File.all
     end
     def new
-      @asset = Asset.new
+      @asset = File.new
     end
     
     def edit
-       @asset = Asset.find(params[:id])
+       @asset = File.find(params[:id])
     end
         
     def create  
-      @asset = Asset.new(params[:asset])  
+      @asset = File.new(params[:file])  
       if @asset.save
         redirect_to action: :index
       else
@@ -21,9 +21,9 @@ module Cms
     end
     
     def destroy
-      @asset = Asset.find(params[:id])
+      @asset = File.find(params[:id])
       @asset.destroy
-      redirect_to assets_path
+      redirect_to files_path
     end
     
   end

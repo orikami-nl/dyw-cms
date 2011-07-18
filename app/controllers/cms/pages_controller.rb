@@ -63,7 +63,7 @@ module Cms
     # GET /pages/new.json
     def new
       @page = @category.pages.new
-      @assets = Asset.all
+      @assets = Cms::File.all
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @page }
@@ -73,7 +73,7 @@ module Cms
     # GET /pages/1/edit
     def edit
       @page = Page.find(params[:id])
-      @assets = Asset.all
+      @assets = Cms::File.all
     end
   
     # POST /pages
