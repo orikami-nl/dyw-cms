@@ -1,3 +1,3 @@
-= Cms-lang-1
+= Cms-lang-primawerk
 
 This project rocks and uses MIT-LICENSE.
