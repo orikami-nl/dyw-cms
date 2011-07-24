@@ -49,7 +49,8 @@ module Cms
     # GET /categories/new.json
     def new
       @category = Category.new
-  
+      @category.category_title = Hash.new
+      @category.body = Hash.new
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @category }
@@ -70,6 +71,10 @@ module Cms
 			else
 				last_position = last_category.position.to_i
 			end
+
+      if @category.link_name == ''
+        @category.link_name = Base64.encode64(Digest::SHA1.digest("#{rand(1<<64)}/#{Time.now.to_f}/#{Process.pid}"))[0..7]
+      end
 
       @category = Category.new(params[:category])
 			@category.position = last_position + 1

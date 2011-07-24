@@ -15,7 +15,7 @@ module Cms
 		end
 
 		def next_category
-		  self.class.first(:conditions => ["position > ?", position], :order => "position asc")
+		 	self.class.first(:conditions => ["position > ?", position], :order => "position asc")
 		end
 
   end
