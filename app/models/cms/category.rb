@@ -1,5 +1,9 @@
 module Cms
   class Category < ActiveRecord::Base
+
+  		serialize :category_title
+  		serialize :body
+
 		has_many :pages, :dependent => :destroy
 		attr_accessible :category_title, :link_name, :position, :body
 		validates_presence_of :category_title, :link_name

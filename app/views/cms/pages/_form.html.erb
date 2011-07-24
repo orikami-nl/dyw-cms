@@ -10,24 +10,29 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.fields_for :page_title do |o| %>
-        <%= o.text_field :nl, :value => @page.page_title["nl"] %>
-        <%= o.text_field :en, :value => @page.page_title["en"] %>
-    <% end %>
-  </div>
-  <div class="field">
     <%= f.label "Name for link appendage" %><br />
     <%= f.text_field :link_name %><br />
-		<%= f.label "Hint: No slashes, just one unique word that is appended to the url and references the page" %> 
+    <%= f.label "Hint: No slashes, just one unique word that is appended to the url and references the page" %> 
   </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.fields_for :body do |o| %>
-        <%= o.text_area :nl, :value => @page.body["nl"], :class => "input" %>
-        <%= o.text_area :en, :value => @page.body["en"], :class => "input" %>
-    <% end %>
-  </div>
+  <hr>
+  <% for i in 0..LOCALES.count-1 %>
+    <h3> <%= LOCALESNAMES[i] %> </h3>
+    <div class="field">
+      <%= f.label "Page title"%><br />
+      <%= f.fields_for :page_title do |o| %>
+          <%= o.text_field LOCALES[i], :value => @page.page_title[LOCALES[i]] %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :body %><br />
+      <%= f.fields_for :body do |o| %>
+        <%= o.text_area LOCALES[i], :value => @page.body[LOCALES[i]], :class => "input" %>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
   <div class="actions">
     <%= f.submit "Create"%>
   </div>
+
 <% end %>

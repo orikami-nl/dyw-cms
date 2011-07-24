@@ -1,5 +1,5 @@
 <div class="cms_border">
-	<h1>Editing the <%= @page.page_title %> sub-page</h1>
+	<h1>Editing the <%= @page.page_title[params[:lang]] %> sub-page</h1>
 	<%= render 'form' %>
 </div>
 <div class="cms_asset_list">

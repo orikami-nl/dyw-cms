@@ -1,5 +1,5 @@
 <div class="cms_border">
-<h1>The body of the <%= @category.category_title %> main page will look like:</h1>
+<h1>The body of the <%= @category.category_title[params[:lang]] %> main page will look like:</h1>
 
 <%= raw(@category.body) %>
 <p>
@@ -9,7 +9,7 @@
 
 <div id="pages_list", class="cms_border">
 
-<h1>The following sub-pages are present within the <%= @category.category_title %> main page:</h1>
+<h1>The following sub-pages are present within the <%= @category.category_title[params[:lang]] %> main page:</h1>
 <% if @pages.count.zero? %>
 	<p>
 		No sub-pages are present. You may create one by clicking the link.
