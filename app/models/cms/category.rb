@@ -4,7 +4,7 @@ module Cms
 		attr_accessible :category_title, :link_name, :position, :body
 		validates_presence_of :category_title, :link_name
 		validates_uniqueness_of :category_title, :link_name
-		validates_format_of :link_name, :with => /^[A-Za-z\d_]+$/
+		validates_format_of :link_name, :with => /^[A-Za-z\d_]+$/\
 
 		def previous_category
 			self.class.first(:conditions => ["position < ?", position], :order => "position desc")

@@ -63,6 +63,7 @@ module Cms
     # GET /pages/new.json
     def new
       @page = @category.pages.new
+      @page.page_title = {"nl" => "Nederlandse titel", "en" => "English title"}
       @assets = Cms::File.all
       respond_to do |format|
         format.html # new.html.erb
