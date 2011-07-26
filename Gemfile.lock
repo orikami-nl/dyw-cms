@@ -6,7 +6,7 @@ PATH
       coffee-script
       jquery-rails
       json
-      rails (= 3.1.0.rc3)
+      rails (>= 3.1.0.rc3)
       rake (~> 0.8.7)
       sass
       simple_form

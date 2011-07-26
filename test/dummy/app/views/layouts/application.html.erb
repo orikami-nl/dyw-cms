@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Test Application Layout</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+	<!-- CLEditor script-->  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".input").cleditor();
+    });
+  </script>  
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="cms_body">
+  <div class="flash">
+    <% flash.each do |type, message| -%>
+      <div class="message <%= type %>">
+        <p><%= message %></p>
+      </div>
+    <% end -%>
+  </div>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>
