@@ -5,5 +5,6 @@
 //= require <%= options[:javascript] %>
 //= require <%= options[:javascript] %>_ujs
 <% end -%>
+//= require cleditor
 //= require_tree .
 

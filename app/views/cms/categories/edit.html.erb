@@ -2,4 +2,11 @@
 	<h1>Editing the <%= @category.category_title %> main page</h1>
 	<%= render 'form' %>
 </div>
+
+<div class="cms_asset_list cms_border">
+    <h2>List of uploaded files</h2> 
+		<p>Hint: in order to reference these files, your need to make a link in the editor that points to the file location. e.g. http://www.domain.nl/uploads/cms/asset/file/6/file.pdf</p>
+  <%= render 'cms/files/assets_list' %>
+</div>
+
 <%= link_to 'Back', categories_path %>

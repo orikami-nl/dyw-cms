@@ -25,6 +25,20 @@ module Cms
       @asset.destroy
       redirect_to files_path
     end
-    
+
+		def update
+			@asset = File.find(params[:id])
+			  
+      respond_to do |format|
+        if @asset.update_attributes(params[:file])
+          format.html { redirect_to action: :index, notice: 'File was successfully updated.' }
+          format.json { head :ok }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @category.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
   end
 end

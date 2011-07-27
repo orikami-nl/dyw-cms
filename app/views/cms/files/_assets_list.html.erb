@@ -1,23 +1,31 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>File Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="files_list">
 
-<% @assets.each do |file| %>
-  <tr>
-    <td><%= file.name %></td>
-    <td><%= file.file_url %>
-    <td><%= link_to 'Show', file.file_url %></td>
-    <td><%= link_to 'Edit', edit_file_path(file) %></td>
-    <td><%= link_to 'Destroy', file, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+	<% if @assets.count.zero? %>
+		<p>
+			No uploaded files are present. You may add one by clicking the link.
+		</p>
+	<% else %>
 
-<br />
+		<table>
+  		<tr>
+    		<th>Name</th>
+    		<th>File Location</th>
+    		<th></th>
+  		</tr>
 
-<%= link_to 'New Asset', new_file_path %>
+			<% @assets.each do |file| %>
+	  		<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
+  	  		<td><%= file.name %></td>
+  	  		<td><%= file.file_url %></td>
+  	  		<td class="list_actions"><%= link_to 'Show', file.file_url %><br>
+  	  		<%= link_to 'Edit', edit_file_path(file) %><br>
+  	  		<%= link_to 'Destroy', file, confirm: 'Are you sure?', method: :delete %></td>
+  			</tr>
+			<% end %>
+		</table>
+
+		<br />
+
+		<%= link_to 'Upload new file', new_file_path %>
+	<% end %>
+</div>

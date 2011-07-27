@@ -181,6 +181,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails
+  jquery-rails
   rspec-rails
   simple_form
   sqlite3

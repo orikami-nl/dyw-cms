@@ -45,4 +45,10 @@ ActiveRecord::Schema.define(:version => 20110718155937) do
     t.integer  "position"
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

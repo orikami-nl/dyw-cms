@@ -59,6 +59,7 @@ module Cms
     # GET /categories/1/edit
     def edit
       @category = Category.find(params[:id])
+      @assets = Cms::File.all
     end
   
     # POST /categories

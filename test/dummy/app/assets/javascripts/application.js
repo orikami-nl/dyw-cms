@@ -3,6 +3,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cleditor
+//= require cms
 //= require_tree .
 

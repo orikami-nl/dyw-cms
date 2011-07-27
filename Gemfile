@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem 'jquery-rails'
+
 group :development do
   gem 'simple_form'
   gem 'carrierwave'

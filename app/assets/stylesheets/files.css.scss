@@ -1,0 +1,27 @@
+.cms_body {
+
+#files_list {
+	table {
+    border-collapse: collapse;
+		tr td {
+      padding: 5px;
+      vertical-align: top;
+		}
+	}
+
+	.list_actions {
+  	font-size:    x-small;
+  	text-align:   right;
+  	padding-left: 1em;
+	}
+
+	.list_line_even {
+  	background:   #FFFFFF;
+	}
+
+	.list_line_odd {
+  	background:   #87CEEB;
+	}
+}
+
+}
