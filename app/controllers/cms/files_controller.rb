@@ -27,6 +27,7 @@ module Cms
     def destroy
       @asset = File.find(params[:id])
       @asset.destroy
+      redirect_to session[:last_visited]
     end
 
 		def update
