@@ -49,7 +49,8 @@ module Cms
     # GET /categories/new.json
     def new
       @category = Category.new
-  
+      @assets = Cms::File.find(:all, :order => "id DESC")
+			session[:last_visited] = new_category_path(@category)
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @category }
@@ -59,7 +60,7 @@ module Cms
     # GET /categories/1/edit
     def edit
       @category = Category.find(params[:id])
-      @assets = Cms::File.all
+      @assets = Cms::File.find(:all, :order => "id DESC")
 			session[:last_visited] = edit_category_path(@category)
     end
   

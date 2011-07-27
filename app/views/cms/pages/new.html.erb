@@ -2,8 +2,9 @@
 	<h1>New Sub Page</h1>
 	<%= render 'form' %>
 </div>
-<div class="cms_asset_list">
-  <h2>Hier zie je een lijst met geuploade files. Om naar deze files te verwijzen dien je een link te maken die verwijst naar deze file e.g. http://www.vv-fr.nl/uploads/cms/asset/file/6/file.pdf</h2>
-  <%= render '/cms/files/assets_list' %>
+<div class="cms_asset_list cms_border">
+    <h2>List of uploaded files</h2> 
+		<p>Hint: in order to reference these files, your need to make a link in the editor that points to the file location. e.g. http://www.domain.nl/uploads/cms/asset/file/6/file.pdf</p>
+  <%= render 'cms/files/assets_list' %>
 </div>
 <%= link_to 'Back', category_path(@category) %>
