@@ -19,11 +19,14 @@ module Cms
         render action: :new
       end
     end
+	
+		def show
+      redirect_to session[:last_visited]
+		end
     
     def destroy
       @asset = File.find(params[:id])
       @asset.destroy
-      redirect_to session[:last_visited]
     end
 
 		def update
