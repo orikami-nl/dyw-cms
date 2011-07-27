@@ -60,6 +60,7 @@ module Cms
     def edit
       @category = Category.find(params[:id])
       @assets = Cms::File.all
+			session[:last_visited] = edit_category_path(@category)
     end
   
     # POST /categories

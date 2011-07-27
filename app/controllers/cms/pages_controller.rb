@@ -74,6 +74,7 @@ module Cms
     def edit
       @page = Page.find(params[:id])
       @assets = Cms::File.all
+			session[:last_visited] = edit_category_page_path(@category, @page)
     end
   
     # POST /pages
