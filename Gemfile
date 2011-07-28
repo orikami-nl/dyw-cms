@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'jquery-rails'
+gem 'rake', '~>0.8.7'
 
 group :development do
   gem 'simple_form'
