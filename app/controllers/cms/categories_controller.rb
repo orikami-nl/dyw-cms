@@ -76,6 +76,10 @@ module Cms
 
       @category = Category.new(params[:category])
 			@category.position = last_position + 1
+
+      if @category.link_name == ''
+        @category.link_name = Base64.encode64(Digest::SHA1.digest("#{rand(1<<64)}/#{Time.now.to_f}/#{Process.pid}"))[0..7]
+      end
   
       respond_to do |format|
         if @category.save

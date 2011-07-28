@@ -19,6 +19,10 @@
     <%= f.text_field :link_name %><br />
 		<%= f.label "Hint: No slashes, just one unique word that is appended to the url and references the page" %> 
   </div>
+    <div class="field">
+    <%= f.label :abstract %><br />
+    <%= f.text_area :abstract, :class => "input" %>
+  </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body, :class => "input" %>

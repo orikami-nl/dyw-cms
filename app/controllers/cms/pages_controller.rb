@@ -90,6 +90,10 @@ module Cms
 
       @page = @category.pages.create(params[:page])
 			@page.position = last_position + 1
+
+      if @page.link_name == ''
+        @page.link_name = Base64.encode64(Digest::SHA1.digest("#{rand(1<<64)}/#{Time.now.to_f}/#{Process.pid}"))[0..7]
+      end
   
       respond_to do |format|
         if @page.save

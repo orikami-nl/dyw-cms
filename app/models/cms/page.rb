@@ -1,7 +1,7 @@
 module Cms
   class Page < ActiveRecord::Base
 		belongs_to :category
-		attr_accessible :page_title, :link_name, :position, :body
+		attr_accessible :page_title, :link_name, :position, :body, :abstract
 		validates_presence_of :page_title, :link_name
 		validates_format_of :link_name, :with => /^[A-Za-z\d_]+$/
 

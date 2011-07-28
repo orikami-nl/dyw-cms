@@ -1,3 +1,6 @@
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 module Cms
   class Cms::AssetUploader < CarrierWave::Uploader::Base
     if Rails.env.production?

@@ -4,6 +4,7 @@ class CreateCmsCategories < ActiveRecord::Migration
       t.string :title
       t.string :link_name
       t.text :body
+      t.text :abstract
 
       t.timestamps
     end
