@@ -15,6 +15,7 @@ module Cms
 			upper_page.update_attributes(:position => 'foo')			
 			current_page.update_attributes(:position => upper_position)
 			upper_page.update_attributes(:position => current_position)			
+  		Rails.cache.clear
 			redirect_to category_path(@category)
 		end
 
@@ -26,6 +27,7 @@ module Cms
 			lower_page.update_attributes(:position => 'foo')			
 			current_page.update_attributes(:position => lower_position)
 			lower_page.update_attributes(:position => current_position)			
+  		Rails.cache.clear
 			redirect_to category_path(@category)
 		end
 
@@ -93,6 +95,7 @@ module Cms
   
       respond_to do |format|
         if @page.save
+		  		Rails.cache.clear
           format.html { redirect_to category_path(@category), notice: 'Page was successfully created.' }
           format.json { render json: @page, status: :created, location: @page }
         else
@@ -109,6 +112,7 @@ module Cms
 			  
       respond_to do |format|
         if @page.update_attributes!(params[:page])
+		  		Rails.cache.clear
           format.html { redirect_to category_path(@category), notice: 'Page was successfully updated.' }
           format.json { head :ok }
         else
@@ -123,6 +127,7 @@ module Cms
     def destroy
       @page = Page.find(params[:id])
       @page.destroy
+  		Rails.cache.clear
   
       respond_to do |format|
         format.html { redirect_to category_path(@category) }

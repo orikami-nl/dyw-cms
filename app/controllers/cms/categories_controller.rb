@@ -8,6 +8,7 @@ module Cms
 			upper_category.update_attributes(:position => 'foo')			
 			current_category.update_attributes(:position => upper_position)
 			upper_category.update_attributes(:position => current_position)			
+  		Rails.cache.clear
 			redirect_to root_path
 		end
 
@@ -19,6 +20,7 @@ module Cms
 			lower_category.update_attributes(:position => 'foo')			
 			current_category.update_attributes(:position => lower_position)
 			lower_category.update_attributes(:position => current_position)			
+  		Rails.cache.clear
 			redirect_to root_path
 		end
 
@@ -79,6 +81,7 @@ module Cms
   
       respond_to do |format|
         if @category.save
+		  		Rails.cache.clear
           format.html { redirect_to @category, notice: 'Category was successfully created.' }
           format.json { render json: @category, status: :created, location: @category }
         else
@@ -95,6 +98,7 @@ module Cms
   
       respond_to do |format|
         if @category.update_attributes(params[:category])
+		  		Rails.cache.clear
           format.html { redirect_to @category, notice: 'Category was successfully updated.' }
           format.json { head :ok }
         else
@@ -109,6 +113,7 @@ module Cms
     def destroy
       @category = Category.find(params[:id])
       @category.destroy
+  		Rails.cache.clear
   
       respond_to do |format|
         format.html { redirect_to categories_url }

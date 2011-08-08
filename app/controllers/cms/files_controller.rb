@@ -14,6 +14,7 @@ module Cms
     def create  
       @asset = File.new(params[:file])  
       if @asset.save
+	  		Rails.cache.clear
         redirect_to session[:last_visited], notice: 'File was successfully uploaded.'
       else
         render action: :new
@@ -27,6 +28,7 @@ module Cms
     def destroy
       @asset = File.find(params[:id])
       @asset.destroy
+  		Rails.cache.clear
       redirect_to session[:last_visited]
     end
 
@@ -35,6 +37,7 @@ module Cms
 			  
       respond_to do |format|
         if @asset.update_attributes(params[:file])
+		  		Rails.cache.clear
           format.html { redirect_to session[:last_visited], notice: 'File was successfully updated.' }
           format.json { head :ok }
         else
