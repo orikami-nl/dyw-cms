@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
 	s.add_dependency 'coffee-script'
 	s.add_dependency 'uglifier'
 	s.add_dependency 'jquery-rails'
-	s.add_dependency 'therubyracer-heroku'
 	s.add_dependency 'simple_form'
 	s.add_dependency 'carrierwave'
 end
