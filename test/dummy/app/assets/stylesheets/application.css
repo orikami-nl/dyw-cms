@@ -2,6 +2,5 @@
  * FIXME: Introduce SCSS & Sprockets
  *= require_self
  *= require cms 
- *= require cleditor
  *= require_tree .
 */
